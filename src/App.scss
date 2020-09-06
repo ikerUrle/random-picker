@@ -1,0 +1,149 @@
+$main: #025e73;
+$main-2: #037f8c;
+$main-3: #f2b705;
+$main-4: #f28705;
+$main-5: #f2762e;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+html {
+  box-sizing: border-box;
+  background-image: linear-gradient(
+    to left bottom,
+    #f2b705,
+    #f5a70f,
+    #f6961b,
+    #f58625,
+    #f2762e
+  );
+}
+
+button {
+  background: $main-4;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 1rem 2rem;
+  border: 0;
+  outline: 0;
+  border-radius: 30px;
+  box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: $main;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.author {
+  font-size: 3rem;
+}
+
+.app {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "btn-add  btn-go"
+    "inputs .";
+  gap: 1em;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0 20px;
+  &-title {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    color: $main;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+    a {
+      font-size: 2rem;
+    }
+  }
+}
+
+.btn-go {
+  grid-area: btn-go;
+  width: 80%;
+  margin: 20px;
+  background: $main-5;
+  &:hover {
+    background: lighten($main-5, 10%);
+  }
+}
+
+.btn-add {
+  grid-area: btn-add;
+  width: 80%;
+  &:hover {
+    background: lighten($main-4, 10%);
+  }
+}
+
+.inputs {
+  grid-area: inputs;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 55vh;
+}
+
+.option-input {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0.2rem;
+  background: $main-2;
+  color: #fff;
+  border: 0;
+  border-radius: 30px;
+  outline: 0;
+  box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+
+  &::placeholder {
+    color: $main;
+  }
+}
+
+.result {
+  color: $main;
+  background: #fff;
+  border-radius: 30px;
+  padding: 10px;
+  width: 90%;
+  box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 426px) {
+  html {
+    background: $main-3;
+    font-size: 200%;
+    overflow-y: auto;
+  }
+
+  .app {
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "btn-add"
+      "btn-go"
+      "inputs ";
+  }
+
+  .inputs {
+    flex-wrap: nowrap;
+  }
+  .option-input {
+    font-size: 3rem;
+  }
+}
